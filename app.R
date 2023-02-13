@@ -1,6 +1,3 @@
-library(rsconnect)
-rsconnect::deployApp('F:/R/shiny/one_parent_search')
-
 library(shiny)
 library(stringr)
 library(dplyr)
