@@ -60,7 +60,7 @@ return(data_rez)}
 
 
 ui_upload <- fluidPage(
-  titlePanel("Ïğîáà ïåğà"),
+  titlePanel("ĞŸÑ€Ğ¾Ğ±Ğ° Ğ¿ĞµÑ€Ğ°"),
   sidebarLayout(
     sidebarPanel(
       fileInput("parents", "aaa"),
