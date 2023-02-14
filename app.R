@@ -1,3 +1,6 @@
+#library(rsconnect)
+#rsconnect::deployApp('F:/R/shiny/one_parent_search')
+
 library(shiny)
 library(stringr)
 library(dplyr)
@@ -60,22 +63,22 @@ return(data_rez)}
 
 
 ui_upload <- fluidPage(
-  titlePanel("Проба пера"),
+  titlePanel("Поиск одного родителя"),
   sidebarLayout(
     sidebarPanel(
-      fileInput("parents", "aaa"),
-      fileInput("offspring", "aaa"),
-      numericInput("nloci", "aaa", value = 12, min = 1),
-      downloadButton("download1", "aaa"),
-      numericInput("penalti", "aaa", value = 0, min = 0),
-      downloadButton("download2", "aaa")
+      fileInput("parents", "База родителей"),
+      fileInput("offspring", "База потомков"),
+      numericInput("nloci", "Число анализируемых локусов", value = 12, min = 1),
+      downloadButton("download1", "Скачать файл (полная база)"),
+      numericInput("penalti", "Число несовпадений по локусам", value = 0, min = 0),
+      downloadButton("download2", "Скачать файл (фильтрованная база)")
                 ),
     mainPanel(
       tabsetPanel(
-        tabPanel("aaa", tableOutput("parents_rez")),
-        tabPanel("aaa", tableOutput("offspring_rez")),
-        tabPanel("aaa", tableOutput("test_rez")),
-        tabPanel("aaa", tableOutput("test_rez_sort"))
+        tabPanel("База родителей", tableOutput("parents_rez")),
+        tabPanel("База потомков", tableOutput("offspring_rez")),
+        tabPanel("Результаты теста (полная база)", tableOutput("test_rez")),
+        tabPanel("Результаты теста (фильтрованная база)", tableOutput("test_rez_sort"))
       )                               
     )
   )
